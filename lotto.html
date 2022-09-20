@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>樂透號碼預測</h2>
+    <script>
+        //陣列
+        let arr1 = []
+        console.log(arr1);
+        arr1.push('jack');
+        arr1.push(123);
+        arr1.push(789);
+        console.log(arr1);
+        console.log(arr1.length);
+        console.log(arr1[0]);
+        for (let i = 0; i < arr1.length; i++) {
+            console.log(arr1[i]);
+        }
+        //函式宣告
+        function randInt(start, end, count = 6) {
+            let lotto = [];
+            if (count <= 0) {
+                return "次數錯誤";
+            }
+            while (true) {
+                let x = Math.floor(Math.random() * (end - start + 1)) + start;
+                if (!lotto.includes(x)) {
+                    lotto.push(x);
+                }
+                if (lotto.length == count) {
+                    break;
+                }
+            }
+
+            return lotto;
+        }
+        lottoNumber = randInt(1, 49, 6);
+
+        console.log(lottoNumber, lottoNumber.join(","));
+
+        document.write(`<h2>${lottoNumber.join(",")}</h2>`)
+    </script>
+</body>
+
+</html>

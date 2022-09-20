@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+    </script>
+</head>
+
+<body>
+    <h1>JavaScript Demo</h1>
+
+    <script>
+        //var,let,const
+        const PI = 3.1415926;
+        //let radius = prompt("請輸入半徑:");
+        let radius = 10
+        let area = radius ** 2 * PI;
+        //let area = 0;
+        /*{
+            let radius = "10";
+            area = radius ** 2 * PI;
+            console.log(radius, area);
+        }*/
+        //輸出的三種寫法
+        //可以吃標籤及樣式語法
+        //輸出給使用者看
+        document.write("<h2 style='color:red'>面積為:" + area + "</h2>")
+        //給後端看
+        console.log(radius, typeof (radius));
+        //警告視窗:不吃標籤及樣式語法
+        //alert("面積為:" + area)
+        //輸入兩個數字加總輸出
+        //Number ==> int/float
+        //let x = Number(prompt("請輸入第一個數字:"));
+        //let y = Number(prompt("請輸入第二個數字:"));
+        let x = 10;
+        let y = 20;
+        //字串串接
+        document.write("<h3>" + x + "+" + y + "=" + (x + y) + "</h3>")
+        //字串樣板
+        const result = `<h3>${x}+${y}=${x + y}</h3>`
+        document.write(`<h3>${x}+${y}=${x + y}</h3>`);
+
+        //字串用法
+        let email = "12345@gmail.com"
+        console.log(email, typeof (email));
+        console.log(email.length);
+        console.log(email[0]);
+        console.log(email[email.length - 1]);
+        console.log(email.indexOf("m"));
+        console.log(email.lastIndexOf("m"));
+        console.log(email.substring(0, 5));
+        console.log(email.replace("12345", "jacky"));
+        console.log(email.includes("12345"));
+        //值是否相等
+        console.log(email.substring(0, 5) == "12345");
+        //值跟型態都要相等
+        console.log(email.substring(0, 5) === 12345);
+        //使用for迴圈 i++ ==> i+=1
+        for (let i = 0; i < email.length; i++) {
+            console.log(i, email[i]);
+        }
+        //i++  ++i
+        let j = 0;
+        for (; j < email.length;) {
+            console.log(j, email[j++]);
+        }
+        let i = 0;
+        for (; i < email.length;) {
+            console.log(i, email[++i]);
+        }
+
+        console.log(10 / "a");
+
+        let a = 0;
+        let b = 0;
+
+        console.log(++a + ++b)
+        console.log(a, b)
+
+        //and ==>&& ; or ==> || ; not ==> !
+        x = 10;
+        y = 20;
+        z = 30;
+        if (x > y && z++ > y) {
+            console.log("1");
+        }
+        //檢查比對式右側有沒有運行
+        console.log(x, y, z);
+        if (x < y || z++ > y) {
+            console.log("1");
+        }
+        console.log(x, y, z);
+
+        let x1 = null;
+        console.log(x1, x1 + 10);
+
+        let x2 = null;
+        console.log(x2, x2 + 10);
+
+        //亂數
+        x = -7.7;
+        //絕對值
+        console.log(Math.abs(x));
+        //大於等於整數值
+        console.log(Math.ceil(x));
+        //小於等於整數值
+        console.log(Math.floor(x));
+        //四捨五入整數值
+        console.log(Math.round(x));
+
+        //取1-10亂數值
+        //x = Math.random()
+        //console.log(x);
+        //console.log(x * 10);
+        //console.log(Math.floor(x * 10) + 1);
+        //for (let i = 0; i < 10; i++) {
+        // console.log(Math.floor(Math.random() * 10) + 1);
+        //}
+        //取0-10之間的亂數
+        let start = 0;
+        let end = 100;
+        for (let i = 0; i < 10; i++) {
+            console.log(Math.floor(Math.random() * (end - start + 1)) + start);
+        }
+        let count = 0;
+        while (true) {
+            let x = Math.floor(Math.random() * (end - start + 1)) + start;
+            console.log(x);
+            if (x == 0) {
+                break;
+            }
+            count++;
+        }
+        console.log(`次數${count}`);
+
+
+    </script>
+</body>
+
+</html>
